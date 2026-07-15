@@ -1,0 +1,36 @@
+/* Estilo base para el botón */
+.btn-agencia {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2c2c2c; /* Un gris oscuro, similar a la imagen */
+    color: #ffffff;             /* Texto blanco */
+    border: 1px solid #444444;  /* Borde sutil */
+    border-radius: 8px;         /* Esquinas redondeadas */
+    padding: 10px 20px;         /* Espaciado interno */
+    font-family: inherit;       /* Hereda la fuente del sitio */
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out; /* Efecto suave al pasar el ratón */
+    text-transform: capitalize; /* Asegura que la primera letra sea mayúscula */
+}
+
+/* Efecto hover (cuando pasas el ratón por encima) */
+.btn-agencia:hover {
+    background-color: #3a3a3a; /* Un gris un poco más claro */
+    border-color: #555555;
+}
+
+/* Estilo para el icono */
+.btn-icon {
+    display: flex;
+    margin-right: 10px;  /* Espacio entre el icono y el texto */
+    font-size: 20px;     /* Tamaño del icono */
+    color: #c98c48;      /* Color dorado/ocre del icono en la imagen */
+}
+
+/* Estilo para el texto */
+.btn-text {
+    line-height: 1;      /* Alinea el texto verticalmente con el icono */
+}

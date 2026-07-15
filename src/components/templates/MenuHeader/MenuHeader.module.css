@@ -1,0 +1,33 @@
+.menuHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+}
+
+.logoSection {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logoBox {
+    background-color: #c98c48;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.logoText {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0;
+}
+
+.navButtons {
+    display: flex;
+    gap: 10px;
+}
