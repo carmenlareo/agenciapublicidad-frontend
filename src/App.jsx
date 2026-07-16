@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import ProtectedRoute from './components/templates/ProtectedRoute/ProtectedRoute'; 
 import Dashboard from './pages/Dashboard/Dashboard';
-
+import LoginAdmin from './pages/LoginAdmin/LoginAdmin';
 
 
 function App() {
@@ -21,7 +21,11 @@ function App() {
               <Dashboard />
             </ProtectedRoute>
           } />
+          
+          <Route path="/login-admin" element={<LoginAdmin />} />
         </Routes>
+
+
       </BrowserRouter>
     </>
   )

@@ -8,3 +8,5 @@ const LinkAdmin = ({ to, label }) => {
     </Link>
   );
 };
+
+export default LinkAdmin;

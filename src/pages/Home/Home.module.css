@@ -6,6 +6,10 @@
   font-family: sans-serif;
   text-align: center;
   background-color: #fafafa;
+  background-image: url('../../assets/fondoSolution2.svg');
+    background-size: cover;      
+    background-repeat: no-repeat;
+    box-sizing: border-box;
 }
 
 .title { font-size: 1.2rem; margin-bottom: 5px;

@@ -1,0 +1,13 @@
+.contenedor {
+ 
+    width: 100vw;
+    /* Degradado sutil */
+    background: #86e2db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background-image: url('../../../assets/fondoSolutionsvg.svg');
+    background-size: cover;      
+    background-repeat: no-repeat;
+    box-sizing: border-box;*/
+}
