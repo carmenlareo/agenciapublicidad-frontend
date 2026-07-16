@@ -6,7 +6,7 @@ import FormularioContacto from '../../components/molecules/FormularioContacto/Fo
 import CardContainer from '../../components/molecules/CardContainer/CardContainer';
 import FooterHome from '../../components/organisms/FooterHome/FooterHome';
 import FondoHome from '../../components/atoms/FondoHome/FondoHome';
-import fondoImage from '../../assets/fondoSolutionsvg.svg';
+import fondoImage from '../../assets/fondoSolution.svg';
 
 const Home = () => {
 

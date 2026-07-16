@@ -1,7 +1,7 @@
 
 import React from 'react';
 import styles from './FondoHome.module.css'; 
-import fondoImage from '../../../assets/fondoSolutionsvg.svg';
+import fondoImage from '../../../assets/fondoSolution.svg';
 
 const FondoHome = ({ children }) => {
   return (
