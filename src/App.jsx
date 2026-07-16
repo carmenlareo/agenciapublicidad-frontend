@@ -15,6 +15,8 @@ function App() {
           {/* Rutas Públicas */}
           <Route path="/" element={<Home />} />
 
+          <Route path="/login-admin" element={<LoginAdmin />} />
+
           {/* Ruta Protegida */}
           <Route path="/admin" element={
             <ProtectedRoute>
@@ -22,9 +24,8 @@ function App() {
             </ProtectedRoute>
           } />
           
-          <Route path="/login-admin" element={<LoginAdmin />} />
+          
         </Routes>
-
 
       </BrowserRouter>
     </>
