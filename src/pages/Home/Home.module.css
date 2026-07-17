@@ -21,7 +21,7 @@ letter-spacing: 4px; }
 .cardContainer { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 350px; }
 .card { padding: 15px; border-radius: 10px; color: white; display: flex; align-items: center; gap: 10px; cursor: pointer; text-align: left; }
 
-.sede { background-color: #72c8c6; }
+.sede { background-color: #7AD5D6; }
 .llamanos { background-color: #ff7840; }
 .formulario { background-color: #111e3b; }
 
