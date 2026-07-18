@@ -1,0 +1,143 @@
+.navbar {
+  background-color: #1a1a1a;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.logo {
+  font-weight: 400 !important;
+  font-size: 0.1rem;
+  color: white;           
+  text-decoration: none;  
+  cursor: pointer;  
+  display: flex;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+.navBtn {
+  background: transparent;
+  border: none;
+  color: #a0a0a0;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.navBtn:hover, .active {
+  color: white;
+}
+
+/* --- LÓGICA RESPONSIVE --- */
+
+.hamburgerContainer {
+  display: none; /* Oculto por defecto en escritorio */
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .hamburgerContainer {
+    display: block; /* Solo visible en móviles */
+  }
+
+  .navLinks {
+    display: none; /* Ocultamos los links por defecto en móvil */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  /* Clase aplicada por React al hacer clic */
+  .mobileMenuOpen .navLinks {
+    display: flex; 
+  }
+}
+
+.navBtn.active {
+  background-color: #333;
+  color: white;
+ 
+}
+
+.navbar {
+  background-color: #1a1a1a;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.logo { font-weight: bold; font-size: 1.2rem; }
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+/* Estilo base del botón/enlace */
+.navBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px; /* Bordes redondeados */
+  text-decoration: none;
+  color: #a0a0a0;
+  transition: all 0.3s ease;
+}
+
+/* Estilo cuando el botón está ACTIVO */
+.activeBtn {
+  background-color: #2a2a2a; /* Fondo oscuro */
+  color: #ffb347; /* Color naranja/dorado del texto e icono */
+}
+
+.navBtn:hover {
+  color: white;
+}
+
+/* Responsive */
+.hamburgerContainer { display: none; font-size: 1.5rem; cursor: pointer; }
+
+@media (max-width: 500px) {
+  .hamburgerContainer { display: block; }
+  .navLinks { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #1a1a1a; padding: 1rem; }
+  .mobileMenuOpen .navLinks { display: flex; }
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Esto añade el espacio entre el icono y el texto */
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #a0a0a0;
+}
+
+.active {
+  background-color: #2a2a2a;
+  color: #ffb347;
+}
+

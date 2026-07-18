@@ -10,6 +10,7 @@ const FooterHome = () => {
         <LinkAdmin to="/privacidad" label="Privacidad" /> |
         <LinkAdmin to="/terminos" label="Terminos" /> |
         {/* Aquí cambiamos el destino al path de la nueva página */}
+        <LinkAdmin to="/Dashboard" label="Dashboard" /> |
         <LinkAdmin to="/login-admin" label="Admin" />
       </div>
     </footer>

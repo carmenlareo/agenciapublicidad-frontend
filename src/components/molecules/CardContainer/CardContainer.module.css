@@ -7,9 +7,9 @@ letter-spacing: 4px; }
 .subtitle { font-size: 1.8rem; font-weight: bold; margin-bottom: 20px; }
 
 .cardContainer { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 350px; }
-.card { padding: 15px; border-radius: 10px; color: white; display: flex; align-items: center; gap: 10px; cursor: pointer; text-align: left; }
+.card { padding: 15px; border-radius: 10px; color: #203838; display: flex; align-items: center; gap: 10px; cursor: pointer; text-align: left; }
 
-.sede { background-color: #386362; }
+.sede { background-color: #7AD5D6; } 
 .llamanos { background-color: #ff7840; }
 .formulario { background-color: #111e3b; }
 

@@ -1,0 +1,45 @@
+.pageContainer {
+  background-color: #f7f5f0;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.addClientCard {
+  background: white;
+  border: 1px solid #e6e4de;
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+  max-width: 100%;
+}
+
+.addClientCard:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.addClientContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.iconBackground {
+  background: #fdf5e6;
+  color: #d99c56;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+}
+
+.plusIcon {
+  color: #d99c56;
+  border: 1px solid #d99c56;
+  border-radius: 50%;
+  padding: 2px;
+  font-size: 1.1rem;
+}
