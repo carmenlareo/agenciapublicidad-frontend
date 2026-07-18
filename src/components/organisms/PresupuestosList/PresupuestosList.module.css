@@ -76,3 +76,42 @@
   color: #888;
   cursor: pointer;
 }
+
+
+.toolbar {
+  display: flex;
+  gap: 8px; /* Ajustado para que quepan los filtros */
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.filterBtn {
+  padding: 6px 12px;
+  border: 1px solid #e6e4de;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #555;
+  white-space: nowrap;
+}
+
+.filterBtn.active {
+  background: #1a1a1a;
+  color: white;
+  border-color: #1a1a1a;
+}
+
+/* Colores de estados actualizados */
+.statusBadge { padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; }
+.estadoAceptado { background: #e6fffa; color: #319795; }
+.estadoPendiente { background: #fffaf0; color: #d69e2e; }
+.estadoPagado { background: #ebf8ff; color: #3182ce; }
+.estadoEnviado { background: #f0fff4; color: #38a169; }
+
+.actions {
+  display: flex;
+  gap: 10px;
+  color: #777;
+  font-size: 1.1rem;
+}
