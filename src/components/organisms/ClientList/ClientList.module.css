@@ -1,0 +1,47 @@
+.container {
+  margin-top: 24px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e6e4de;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+}
+
+.searchBar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #eee;
+  color: #666;
+}
+
+.searchBar input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f9f9f9;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: 15px 20px;
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table td {
+  padding: 15px 20px;
+  border-top: 1px solid #eee;
+  color: #333;
+}
+
+.clientName { font-weight: 600; }
