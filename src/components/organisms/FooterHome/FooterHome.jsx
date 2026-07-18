@@ -5,7 +5,7 @@ import styles from './FooterHome.module.css';
 const FooterHome = () => {
   return (
     <footer className={styles.footer}>
-      <p>Agencia Digital Solutions - 2026</p>
+      <p>Agencia Digital SOLUTIONS - 2026</p>
       <div className={styles.footerLinks}>
         <LinkAdmin to="/privacidad" label="Privacidad" /> |
         <LinkAdmin to="/terminos" label="Terminos" /> |

@@ -1,0 +1,19 @@
+.primaryButton {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 10px 24px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espacio entre el '+' y el texto */
+  transition: opacity 0.2s;
+}
+
+.primaryButton:hover {
+  opacity: 0.9;
+}

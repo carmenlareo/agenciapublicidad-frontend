@@ -1,0 +1,78 @@
+.container {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e6e4de;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.searchBar {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #e6e4de;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+.filterBtn {
+  padding: 8px 16px;
+  border: 1px solid #e6e4de;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+  color: #666;
+}
+
+.filterBtn.active {
+  background: #1a1a1a;
+  color: white;
+  border-color: #1a1a1a;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+  border-bottom: 2px solid #f7f5f0;
+}
+
+.table td {
+  padding: 16px;
+  border-bottom: 1px solid #f7f5f0;
+  color: #333;
+}
+
+.statusBadge {
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Colores para estados */
+.estadoAceptado { background: #e6fffa; color: #319795; }
+.estadoPendiente { background: #fffaf0; color: #d69e2e; }
+.estadoPagado { background: #ebf8ff; color: #3182ce; }
+
+.actions {
+  display: flex;
+  gap: 12px;
+  color: #888;
+  cursor: pointer;
+}
