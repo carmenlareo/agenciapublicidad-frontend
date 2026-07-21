@@ -115,3 +115,42 @@
   color: #777;
   font-size: 1.1rem;
 }
+
+.searchContainer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px 14px 10px 0px; /* Deja espacio a la izquierda para el ícono */
+  background-color: #f1f1f1; /* Color gris claro de fondo similar al de la imagen */
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.searchInput::placeholder {
+  color: #888;
+}
+
+.searchInput:focus {
+  background-color: #fff;
+  border-color: #007bff; /* O el color principal de acento de tu app */
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  font-size: 16px;
+  pointer-events: none; /* Evita que el ícono interfiera al hacer clic en el input */
+}

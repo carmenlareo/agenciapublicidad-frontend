@@ -4,7 +4,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import styles from './PresupuestosList.module.css';
 import { getPresupuestos, deletePresupuesto, updatePresupuesto } from "../../../services/presupuestosService";
 import NuevoPresupuestoModal from '../NuevoPresupuestoModal/NuevoPresupuestoModal';
-
+import { FiSearch } from 'react-icons/fi';
 
 const PresupuestosList = () => {
   const [presupuestos, setPresupuestos] = useState([]);
@@ -46,37 +46,40 @@ const PresupuestosList = () => {
     }
   };
 
-const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-const [selectedPresupuesto, setSelectedPresupuesto] = useState(null);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [selectedPresupuesto, setSelectedPresupuesto] = useState(null);
 
-const handleSavePresupuesto = async (formData, id) => {
-  try {
-    if (id) {
-      // Si el ID existe, actualizamos el presupuesto existente
-      await presupuestosService.updatePresupuesto(id, formData);
-    } else {
-      // Si no existe, creamos uno nuevo
-      await presupuestosService.createPresupuesto(formData);
+  const handleSavePresupuesto = async (formData, id) => {
+    try {
+      if (id) {
+        // Si el ID existe, actualizamos el presupuesto existente
+        await presupuestosService.updatePresupuesto(id, formData);
+      } else {
+        // Si no existe, creamos uno nuevo
+        await presupuestosService.createPresupuesto(formData);
+      }
+
+      // Cerramos el modal y limpiamos la selección
+      setIsEditModalOpen(false);
+      setSelectedPresupuesto(null);
+
+      // Recargamos la tabla para ver los cambios reflejados
+      fetchPresupuestos();
+    } catch (error) {
+      console.error("Error al guardar el presupuesto:", error);
     }
-    
-    // Cerramos el modal y refrescamos la lista
-    setIsEditModalOpen(false);
-    setSelectedPresupuesto(null);
-    // Llama aquí a tu función para recargar la tabla (ej. fetchPresupuestos o loadPresupuestos)
-  } catch (error) {
-    console.error("Error al guardar el presupuesto:", error);
-  }
-};
+  };
 
 
- const handleEdit = (item) => {
-  setSelectedPresupuesto(item);
-  setIsEditModalOpen(true);
-};
+  const handleEdit = (item) => {
+    setSelectedPresupuesto(item);
+    setIsEditModalOpen(true);
+  };
 
   return (
     <div className={styles.container}>
       <div className={styles.searchBarContainer}>
+        <FiSearch className={styles.searchIcon} />
         <input
           type="text"
           placeholder="Buscar presupuesto..."
@@ -84,6 +87,8 @@ const handleSavePresupuesto = async (formData, id) => {
           onChange={(e) => setSearchTerm(e.target.value)}
           className={styles.searchInput}
         />
+
+
         <div className={styles.filters}>
           {['Todos', 'Pendiente', 'Enviado', 'Aceptado', 'Rechazado', 'Pagado'].map((estado) => (
             <button
@@ -147,17 +152,17 @@ const handleSavePresupuesto = async (formData, id) => {
         </tbody>
       </table>
 
-{isEditModalOpen && (
-  <NuevoPresupuestoModal 
-    isOpen={isEditModalOpen}
-    presupuesto={selectedPresupuesto} 
-    onClose={() => setIsEditModalOpen(false)} 
-    onSave={(datosActualizados, id) => {
-      // Aquí actualizarás la lista o llamarás a tu servicio
-      setIsEditModalOpen(false);
-    }}
-  />
-)}
+      {isEditModalOpen && (
+        <NuevoPresupuestoModal
+          isOpen={isEditModalOpen}
+          presupuesto={selectedPresupuesto}
+          onClose={() => {
+            setIsEditModalOpen(false);
+            setSelectedPresupuesto(null);
+          }}
+          onSave={handleSavePresupuesto}
+        />
+      )}
 
     </div>
   );

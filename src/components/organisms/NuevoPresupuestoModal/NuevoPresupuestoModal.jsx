@@ -56,8 +56,15 @@ const NuevoPresupuestoModal = ({ isOpen, onClose, presupuesto, onSave }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSave(formData, presupuesto ? presupuesto.id : null);
+console.log("¡ handleSubmit ejecutado !");
+    console.log("Datos del formulario (formData):", formData);
+    console.log("ID del presupuesto:", presupuesto?.id);
+
+    onSave(formData, presupuesto?.id);
   };
+
+
+  
 
   return (
     <div className={styles.overlay}>
