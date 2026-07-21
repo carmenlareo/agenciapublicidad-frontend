@@ -24,7 +24,14 @@ const Clientes = () => {
       </main>
 
     
-      {isModalOpen && <AddClientModal onClose={() => setIsModalOpen(false)} />}
+      {isModalOpen && (
+    <AddClientModal 
+        onClose={() => setIsModalOpen(false)} 
+        onClientAdded={() => {
+            window.location.reload(); 
+        }} 
+    />
+)}
     </div>
   );
 };
