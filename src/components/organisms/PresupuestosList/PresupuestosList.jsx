@@ -3,7 +3,7 @@ import { FiEye, FiEdit2, FiTrash2 } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import styles from './PresupuestosList.module.css';
 import { getPresupuestos, deletePresupuesto, updatePresupuesto } from "../../../services/presupuestosService";
-import NuevoPresupuestoModal from '../NuevoPresupuestoModal/NuevoPresupuestoModal';
+import NuevoPresupuestoModal from '../AddPresupuestoModal/AddPresupuestoModal';
 import { FiSearch } from 'react-icons/fi';
 
 const PresupuestosList = () => {
@@ -76,10 +76,19 @@ const PresupuestosList = () => {
     setIsEditModalOpen(true);
   };
 
+const presupuestosFiltrados = presupuestos.filter((presupuesto) => {
+    const termino = searchTerm.toLowerCase();
+    const descripcion = presupuesto.descripcion?.toLowerCase() || '';
+    // Puedes incluir más campos si lo deseas (por ejemplo, el nombre del cliente)
+    
+    return descripcion.includes(termino);
+});
+
+
+
   return (
     <div className={styles.container}>
       <div className={styles.searchBarContainer}>
-        <FiSearch className={styles.searchIcon} />
         <input
           type="text"
           placeholder="Buscar presupuesto..."

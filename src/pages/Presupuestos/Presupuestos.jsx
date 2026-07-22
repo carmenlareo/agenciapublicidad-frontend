@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Navbar from '../../components/organisms/Navbar/Navbar';
-import NuevoPresupuestoModal from '../../components/organisms/NuevoPresupuestoModal/NuevoPresupuestoModal';
+import NuevoPresupuestoModal from '../../components/organisms/AddPresupuestoModal/AddPresupuestoModal';
 import styles from './Presupuestos.module.css';
 import PresupuestosList from '../../components/organisms/PresupuestosList/PresupuestosList';
+import { crearPresupuesto } from '../../services/presupuestosService';
 
 const Presupuestos = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,12 +22,15 @@ const Presupuestos = () => {
 
                 </div>
                 <PresupuestosList />
-                {/* Aquí irá tu tabla de presupuestos más adelante */}
-
-                <NuevoPresupuestoModal
-                    isOpen={isModalOpen}
-                    onClose={() => setIsModalOpen(false)}
-                />
+                {isModalOpen && (
+                    <NuevoPresupuestoModal
+                        isOpen={isModalOpen}
+                        onClose={() => setIsModalOpen(false)}
+                        onSave={() => {
+                            window.location.reload(); // Recarga la lista al guardar con éxito
+                        }}
+                    />
+                )}
             </main>
         </div>
     );

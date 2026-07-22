@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import styles from './NuevoPresupuestoModal.module.css';
+import styles from './AddPresupuestoModal.module.css';
 import * as clienteService from '../../../services/clienteService';
+import { crearPresupuesto } from '../../../services/presupuestosService'; 
 
-const NuevoPresupuestoModal = ({ isOpen, onClose, presupuesto, onSave }) => {
+const AddPresupuestoModal = ({ isOpen, onClose, presupuesto, onSave }) => {
   if (!isOpen) return null;
 
   const [clientes, setClientes] = useState([]);
   const [formData, setFormData] = useState({
     cliente_id: '',
     descripcion: '',
-    monto: 0,
-    estado: 'Pendiente'
-  });
+    monto: '',
+    estado: 'pendiente', // En minúsculas para que coincida con el backend
+    fecha: new Date().toISOString().split('T')[0] // Formato YYYY-MM-DD o el que requiera tu API
+});
 
   // Cargar la lista de clientes al abrir el modal
   useEffect(() => {
@@ -35,14 +37,14 @@ const NuevoPresupuestoModal = ({ isOpen, onClose, presupuesto, onSave }) => {
         cliente_id: presupuesto.cliente_id || presupuesto.clienteId || '',
         descripcion: presupuesto.descripcion || '',
         monto: presupuesto.monto || 0,
-        estado: presupuesto.estado || 'Pendiente'
+        estado: presupuesto.estado || 'pendiente'
       });
     } else {
       setFormData({
         cliente_id: '',
         descripcion: '',
         monto: 0,
-        estado: 'Pendiente'
+        estado: 'pendiente'
       });
     }
   }, [presupuesto]);
@@ -54,17 +56,29 @@ const NuevoPresupuestoModal = ({ isOpen, onClose, presupuesto, onSave }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
-console.log("¡ handleSubmit ejecutado !");
-    console.log("Datos del formulario (formData):", formData);
-    console.log("ID del presupuesto:", presupuesto?.id);
+    try {
+        // Aseguramos que la fecha se envíe formateada
+        const dataToSend = {
+            ...formData,
+            cliente_id: Number(formData.cliente_id), // Por si el backend espera un número
+            monto: Number(formData.monto),
+            fecha: formData.fecha || new Date().toISOString().split('T')[0]
+        };
 
-    onSave(formData, presupuesto?.id);
-  };
+        await crearPresupuesto(dataToSend);
+        
+        if (typeof onSave === 'function') onSave();
+        else if (typeof onPresupuestoAdded === 'function') onPresupuestoAdded();
+        
+        onClose();
+    } catch (error) {
+        console.error("Error al guardar:", error.response?.data || error.message);
+    }
+};
 
 
-  
 
   return (
     <div className={styles.overlay}>
@@ -123,4 +137,4 @@ console.log("¡ handleSubmit ejecutado !");
   );
 };
 
-export default NuevoPresupuestoModal;
+export default AddPresupuestoModal;

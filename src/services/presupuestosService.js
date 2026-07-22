@@ -33,3 +33,13 @@ export const updatePresupuesto = async (id, presupuestoData) => {
     throw error;
   }
 };
+
+export const crearPresupuesto = async (presupuestoData) => {
+    try {
+        const response = await api.post('/presupuestos', presupuestoData);
+        return response.data;
+    } catch (error) {
+        console.error('Error al crear el presupuesto:', error);
+        throw error;
+    }
+};
