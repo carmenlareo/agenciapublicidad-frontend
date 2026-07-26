@@ -45,6 +45,8 @@ const ClientList = () => {
                 <span>{filteredClients.length} registros</span>
             </div>
 
+<div className={styles.tableContainer}>
+
             <table className={styles.table}>
                 <thead>
                     <tr>
@@ -67,6 +69,7 @@ const ClientList = () => {
                     ))}
                 </tbody>
             </table>
+            </div>
         </div>
     );
 };

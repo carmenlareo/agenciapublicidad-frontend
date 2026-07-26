@@ -45,3 +45,9 @@
 }
 
 .clientName { font-weight: 600; }
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
